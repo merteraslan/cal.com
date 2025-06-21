@@ -28,8 +28,13 @@ export const BaseEmailHtml = (props: {
   return (
     <Html>
       <EmailHead title={props.subject} />
-      <body style={{ wordSpacing: "normal", backgroundColor: "#F3F4F6" }}>
-        <div style={{ backgroundColor: "#F3F4F6" }}>
+      <body
+        style={{
+          wordSpacing: "normal",
+          backgroundColor: "#000000",
+          fontFamily: "'Geist', Arial, sans-serif",
+        }}>
+        <div style={{ backgroundColor: "#000000" }}>
           <RawHtml
             html={`<!--[if mso | IE]><table align="center" border="0" cellpadding="0" cellspacing="0" class="" style="width:600px;" width="600" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->`}
           />
@@ -53,10 +58,12 @@ export const BaseEmailHtml = (props: {
             style={{
               margin: "0px auto",
               maxWidth: 600,
-              borderRadius: "8px",
-              border: "1px solid #E5E7EB",
-              padding: "2px",
-              backgroundColor: "#FFFFFF",
+              borderRadius: "0.5rem",
+              border: "1px solid #333333",
+              padding: "40px",
+              backgroundColor: "#000000",
+              marginTop: "40px",
+              marginBottom: "40px",
             }}>
             {props.headerType && (
               <EmailSchedulingBodyHeader headerType={props.headerType} headStyles={{ border: 0 }} />
@@ -73,19 +80,19 @@ export const BaseEmailHtml = (props: {
             )}
 
             <RawHtml
-              html={`<!--[if mso | IE]></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" className="" style="width:600px;" width="600" bgcolor="#FFFFFF" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->`}
+              html={`<!--[if mso | IE]></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" className="" style="width:600px;" width="600" bgcolor="#000000" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->`}
             />
             <div
               style={{
-                background: "#FFFFFF",
-                backgroundColor: "#FFFFFF",
+                background: "#000000",
+                backgroundColor: "#000000",
                 margin: "0px auto",
                 maxWidth: 600,
               }}>
               <Row
                 align="center"
                 border="0"
-                style={{ background: "#FFFFFF", backgroundColor: "#FFFFFF", width: "100%" }}>
+                style={{ background: "#000000", backgroundColor: "#000000", width: "100%" }}>
                 <td
                   style={{
                     direction: "ltr",
@@ -110,12 +117,12 @@ export const BaseEmailHtml = (props: {
                       <td align="left" style={{ fontSize: 0, padding: "10px 25px", wordBreak: "break-word" }}>
                         <div
                           style={{
-                            fontFamily: "Roboto, Helvetica, sans-serif",
+                            fontFamily: "'Geist', Arial, sans-serif",
                             fontSize: 16,
-                            fontWeight: 500,
-                            lineHeight: 1,
+                            fontWeight: 400,
+                            lineHeight: "24px",
                             textAlign: "left",
-                            color: "#101010",
+                            color: "#ffffff",
                           }}>
                           {props.children}
                         </div>
@@ -128,20 +135,20 @@ export const BaseEmailHtml = (props: {
             </div>
             {props.callToAction && <EmailSchedulingBodyDivider headStyles={{ border: 0 }} />}
             <RawHtml
-              html={`<!--[if mso | IE]></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" className="" style="width:600px;" width="600" bgcolor="#FFFFFF" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->`}
+              html={`<!--[if mso | IE]></td></tr></table><table align="center" border="0" cellpadding="0" cellspacing="0" className="" style="width:600px;" width="600" bgcolor="#000000" ><tr><td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;"><![endif]-->`}
             />
 
             <div
               style={{
-                background: "#FFFFFF",
-                backgroundColor: "#FFFFFF",
+                background: "#000000",
+                backgroundColor: "#000000",
                 margin: "0px auto",
                 maxWidth: 600,
               }}>
               <Row
                 align="center"
                 border="0"
-                style={{ background: "#FFFFFF", backgroundColor: "#FFFFFF", width: "100%" }}>
+                style={{ background: "#000000", backgroundColor: "#000000", width: "100%" }}>
                 <td
                   style={{
                     direction: "ltr",
@@ -169,7 +176,7 @@ export const BaseEmailHtml = (props: {
                             <td
                               align="center"
                               vertical-align="middle"
-                              style={{ fontSize: 0, padding: "10px 25px", wordBreak: "break-word" }}>
+                              style={{ fontSize: 0, padding: "32px 25px", wordBreak: "break-word" }}>
                               {props.callToAction}
                             </td>
                           </tr>
@@ -179,11 +186,11 @@ export const BaseEmailHtml = (props: {
                               style={{ fontSize: 0, padding: "10px 25px", wordBreak: "break-word" }}>
                               <div
                                 style={{
-                                  fontFamily: "Roboto, Helvetica, sans-serif",
+                                  fontFamily: "'Geist', Arial, sans-serif",
                                   fontSize: 13,
                                   lineHeight: 1,
                                   textAlign: "left",
-                                  color: "#000000",
+                                  color: "#ffffff",
                                 }}
                               />
                             </td>

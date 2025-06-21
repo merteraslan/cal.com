@@ -30,7 +30,16 @@ export const TeamInviteEmail = (
   const content = getContent();
   return (
     <V2BaseEmailHtml subject={getSubject(props)}>
-      <p style={{ fontSize: "24px", marginBottom: "16px", textAlign: "center" }}>
+      <p
+        style={{
+          fontSize: "32px",
+          fontWeight: "600",
+          marginBottom: "20px",
+          textAlign: "center",
+          color: "#ffffff",
+          fontFamily: "'Geist', Arial, sans-serif",
+          margin: "30px 0 20px 0",
+        }}>
         <>{heading}</>
       </p>
       <img
@@ -50,11 +59,14 @@ export const TeamInviteEmail = (
       />
       <p
         style={{
+          color: "#999999",
+          fontFamily: "'Geist', Arial, sans-serif",
+          fontSize: "16px",
           fontWeight: 400,
           lineHeight: "24px",
           marginBottom: "32px",
           marginTop: "32px",
-          lineHeightStep: "24px",
+          textAlign: "center",
         }}>
         <>{content}</>
       </p>
@@ -69,36 +81,54 @@ export const TeamInviteEmail = (
       </div>
       <p
         style={{
+          color: "#999999",
+          fontFamily: "'Geist', Arial, sans-serif",
+          fontSize: "16px",
           fontWeight: 400,
           lineHeight: "24px",
           marginBottom: "32px",
           marginTop: "48px",
-          lineHeightStep: "24px",
+          textAlign: "center",
         }}
       />
 
       <div className="">
         <p
           style={{
+            color: "#999999",
+            fontFamily: "'Geist', Arial, sans-serif",
+            fontSize: "16px",
             fontWeight: 400,
             lineHeight: "24px",
             marginBottom: "32px",
             marginTop: "32px",
-            lineHeightStep: "24px",
+            textAlign: "center",
           }}>
           <>
             {props.language("email_no_user_signoff", {
-              appName: APP_NAME,
+              appName: "Your Team",
             })}
           </>
         </p>
       </div>
 
-      <div style={{ borderTop: "1px solid #E1E1E1", marginTop: "32px", paddingTop: "32px" }}>
-        <p style={{ fontWeight: 400, margin: 0 }}>
+      <div style={{ borderTop: "1px solid #333333", marginTop: "32px", paddingTop: "32px" }}>
+        <p
+          style={{
+            color: "#999999",
+            fontFamily: "'Geist', Arial, sans-serif",
+            fontSize: "16px",
+            fontWeight: 400,
+            margin: 0,
+            textAlign: "center",
+          }}>
           <>
             {props.language("have_any_questions")}{" "}
-            <a href="mailto:support@cal.com" style={{ color: "#3E3E3E" }} target="_blank" rel="noreferrer">
+            <a
+              href="mailto:support@example.com"
+              style={{ color: "#ffffff", textDecoration: "underline" }}
+              target="_blank"
+              rel="noreferrer">
               <>{props.language("contact")}</>
             </a>{" "}
             {props.language("our_support_team")}

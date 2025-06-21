@@ -10,6 +10,7 @@ const EmailHead = ({ title = "" }) => {
       />
       <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="x-apple-disable-message-reformatting" />
       <style type="text/css">
         {`
           #outlook a {
@@ -21,6 +22,9 @@ const EmailHead = ({ title = "" }) => {
             padding: 0;
             -webkit-text-size-adjust: 100%;
             -ms-text-size-adjust: 100%;
+            font-family: 'Geist', Arial, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
           }
 
           table,
@@ -41,7 +45,29 @@ const EmailHead = ({ title = "" }) => {
 
           p {
             display: block;
-            margin: 13px 0;
+            margin: 16px 0;
+            font-family: 'Geist', Arial, sans-serif;
+            font-size: 16px;
+            line-height: 24px;
+            color: #ffffff;
+          }
+
+          h1, h2, h3, h4, h5, h6 {
+            font-family: 'Geist', Arial, sans-serif;
+            color: #ffffff;
+            font-weight: 600;
+          }
+
+          h2 {
+            font-size: 32px;
+            font-weight: 600;
+            text-align: center;
+            margin: 30px 0 20px 0;
+          }
+
+          a {
+            color: #ffffff;
+            text-decoration: none;
           }
         `}
       </style>
@@ -50,8 +76,8 @@ const EmailHead = ({ title = "" }) => {
         html={`<!--[if lte mso 11]><style type="text/css">.mj-outlook-group-fix { width:100% !important; }</style><![endif]-->`}
       />
       <RawHtml
-        html={`<!--[if !mso]><!--><link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" type="text/css"/>
-      <style type="text/css">@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);</style><!--<![endif]-->`}
+        html={`<!--[if !mso]><!--><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" type="text/css"/>
+      <style type="text/css">@import url(https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap);</style><!--<![endif]-->`}
       />
       <style type="text/css">
         {`

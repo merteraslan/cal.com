@@ -16,27 +16,64 @@ export const ForgotPasswordEmail = (
   props: PasswordReset & Partial<React.ComponentProps<typeof BaseEmailHtml>>
 ) => {
   return (
-    <BaseEmailHtml subject={props.language("reset_password_subject", { appName: APP_NAME })}>
-      <p>
+    <BaseEmailHtml
+      subject={props.language("reset_password_subject", { appName: APP_NAME })}
+      title={props
+        .language("reset_password_subject", { appName: APP_NAME })
+        .replace("Cal.com", "Your Account")}
+      subtitle={props.language("someone_requested_password_reset")}>
+      <p
+        style={{
+          color: "#ffffff",
+          fontSize: "16px",
+          lineHeight: "24px",
+          textAlign: "center",
+          fontFamily: "'Geist', Arial, sans-serif",
+          margin: "16px 0",
+        }}>
         <>{props.language("hi_user_name", { name: props.user.name })}!</>
       </p>
-      <p style={{ fontWeight: 400, lineHeight: "24px" }}>
-        <>{props.language("someone_requested_password_reset")}</>
+      <p
+        style={{
+          color: "#999999",
+          fontSize: "16px",
+          lineHeight: "24px",
+          textAlign: "center",
+          fontFamily: "'Geist', Arial, sans-serif",
+          margin: "16px 0",
+        }}>
+        Follow this link to reset your password:
       </p>
       <CallToAction label={props.language("change_password")} href={props.resetLink} />
 
       <div style={{ lineHeight: "6px" }}>
-        <p style={{ fontWeight: 400, lineHeight: "24px" }}>
+        <p
+          style={{
+            color: "#999999",
+            fontSize: "16px",
+            lineHeight: "24px",
+            textAlign: "center",
+            fontFamily: "'Geist', Arial, sans-serif",
+            margin: "16px 0",
+          }}>
           <>{props.language("password_reset_instructions")}</>
         </p>
       </div>
       <div style={{ lineHeight: "6px" }}>
-        <p style={{ fontWeight: 400, lineHeight: "24px" }}>
+        <p
+          style={{
+            color: "#999999",
+            fontSize: "16px",
+            lineHeight: "24px",
+            textAlign: "center",
+            fontFamily: "'Geist', Arial, sans-serif",
+            margin: "16px 0",
+          }}>
           <>
             {props.language("have_any_questions")}{" "}
             <a
               href={`mailto:${SUPPORT_MAIL_ADDRESS}`}
-              style={{ color: "#3E3E3E" }}
+              style={{ color: "#ffffff", textDecoration: "underline" }}
               target="_blank"
               rel="noreferrer">
               <>{props.language("contact_our_support_team")}</>

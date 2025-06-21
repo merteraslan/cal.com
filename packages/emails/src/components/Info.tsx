@@ -17,7 +17,8 @@ export const Info = (props: {
   const safeLabel = markdownToSafeHTML(props.label.toString());
 
   const StyledHtmlContent = ({ htmlContent }: { htmlContent: string }) => {
-    const css = "color: '#101010'; font-weight: 400; line-height: 24px; margin: 0;";
+    const css =
+      "color: '#ffffff'; font-weight: 400; line-height: 24px; margin: 0; font-family: 'Geist', Arial, sans-serif;";
     return (
       <p
         className="dark:text-darkgray-600 mt-2 text-sm text-gray-500 [&_a]:text-blue-500 [&_a]:underline [&_a]:hover:text-blue-600"
@@ -35,16 +36,27 @@ export const Info = (props: {
     <>
       {props.withSpacer && <Spacer />}
       <div>
-        <p style={{ color: "#101010" }}>
+        <p
+          style={{
+            color: "#ffffff",
+            fontFamily: "'Geist', Arial, sans-serif",
+            fontSize: "16px",
+            lineHeight: "24px",
+            fontWeight: 500,
+            marginBottom: "8px",
+          }}>
           {props.isLabelHTML ? <StyledHtmlContent htmlContent={safeLabel} /> : props.label}
         </p>
         <p
           style={{
-            color: "#101010",
+            color: "#ffffff",
+            fontFamily: "'Geist', Arial, sans-serif",
+            fontSize: "16px",
             fontWeight: 400,
             lineHeight: "24px",
             whiteSpace: "pre-wrap",
             textDecoration: props.lineThrough ? "line-through" : undefined,
+            marginTop: "0",
           }}>
           {props.formatted ? <StyledHtmlContent htmlContent={safeDescription} /> : props.description}
         </p>
