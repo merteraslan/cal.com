@@ -1,0 +1,32 @@
+# This workflow should be placed in your cal.com repository
+# at .github/workflows/trigger-submodule-update.yml
+
+name: Trigger Submodule Update
+
+on:
+  push:
+    branches:
+      - calcom-alt  # Trigger only when pushing to the calcom-alt branch
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  trigger-update:
+    name: 'Trigger Docker Repo Submodule Update'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger repository dispatch
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.SUBMODULE_UPDATE_TOKEN }}
+          repository: merteraslan/calcom-docker  # Your docker repository
+          event-type: submodule-update
+          client-payload: |
+            {
+              "repository": "${{ github.repository }}",
+              "sha": "${{ github.sha }}",
+              "ref": "${{ github.ref }}",
+              "head_commit": {
+                "message": "${{ github.event.head_commit.message }}",
+                "author": "${{ github.event.head_commit.author.name }}"
+              }
+            } 
